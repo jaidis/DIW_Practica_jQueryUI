@@ -3,7 +3,8 @@ $(document).ready(function() {
     autoOpen: false,
     show: {
       effect: "blind",
-      duration: 500
+      duration: 600,
+      easing:"easeOutBounce"
     },
     hide: {
       effect: "fade",
@@ -24,7 +25,8 @@ $(document).ready(function() {
     autoOpen: false,
     show: {
       effect: "bounce",
-      duration: 1000
+      duration: 1000,
+      easing:"easeOutSine"
     },
     hide: {
       effect: "blind",
@@ -44,7 +46,7 @@ $(document).ready(function() {
 
   $("#inputLocalidad").autocomplete({
     source: function(request, response) {
-      $.getJSON("http://api.geonames.org/searchJSON", {
+      $.getJSON("https://api.geonames.org/searchJSON", {
         q: $("#inputLocalidad").val(),
         maxRows: "10",
         country: "ES",
